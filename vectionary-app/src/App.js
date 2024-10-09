@@ -1,4 +1,5 @@
 import './App.css'; 
+import vectionaryImage from './public/Vectionary-Google Docs.pdf.png';
 
 function App() {
   return (
