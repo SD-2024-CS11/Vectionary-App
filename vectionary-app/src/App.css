@@ -22,10 +22,22 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #486Cff;
+  font-family: 'Helvetica', Arial, sans-serif;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.api-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #486cff;
+  font-size: calc(2px + 2vmin);
+  font-family: 'Helvetica', Arial, sans-serif; /* Consistent font */
 }
 
 @keyframes App-logo-spin {

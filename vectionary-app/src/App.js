@@ -18,8 +18,24 @@ function App() {
             placeholder="Enter text" 
             style={{ padding: '16px', fontSize: '18px', marginBottom: '20px', width: '400px' }} 
           />
-          <button style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}>Submit</button>
+          <button 
+            style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', color: 'white', backgroundColor: '#00008b', transition: 'background-color 0.3s'}}
+            onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#486Cff'}
+            onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#00008b'}
+          >
+            Submit
+          </button>
         </div>
+
+        <a 
+          // put filler link of a cute puppy
+          href="https://i.etsystatic.com/40798348/r/il/235c22/4607038596/il_fullxfull.4607038596_dznd.jpg"
+          className="api-info"
+          target="_blank" // Opens the link in a new tab
+          rel="noopener noreferrer"
+        >
+          Looking for the API?
+        </a>
       </header>
     </div>
   );
