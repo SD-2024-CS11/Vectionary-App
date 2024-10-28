@@ -38,6 +38,21 @@
   color: #486cff;
   font-size: calc(2px + 2vmin);
   font-family: 'Helvetica', Arial, sans-serif; /* Consistent font */
+  text-decoration: none;
+}
+
+.p7y-info {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 25px;
+  border-radius: 0;
+  color: #ffffff;
+  background-color: #555555;
+  font-size: calc(6px + 2vmin);
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 @keyframes App-logo-spin {

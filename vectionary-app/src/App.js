@@ -7,10 +7,10 @@ function App() {
       <header className="App-header">
         <h1 style={{ position: 'absolute', top: '20px', textAlign: 'center', width: '100%' }}>Vectionary</h1>
         {/* <img 
-          src={vectionaryImage} 
+          src={'vectionary_logo.png'} 
           alt="Vectionary Logo" 
           style={{ marginTop: '60px', width: '200px', height: 'auto' }} // Adjust size as needed
-        /> */}
+        />*/ }
         
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
           <input 
@@ -35,6 +35,15 @@ function App() {
           rel="noopener noreferrer"
         >
           Looking for the API?
+        </a>
+
+        <a
+          href="https://www.pangeon.com/parsimony"
+          className="p7y-info"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          P7Y
         </a>
       </header>
     </div>
