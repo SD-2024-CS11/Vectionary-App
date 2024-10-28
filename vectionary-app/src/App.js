@@ -1,5 +1,4 @@
 import './App.css';
-// import vectionaryImage from './public/vectionaryLogo.png'; 
 
 function App() {
   return (
@@ -7,9 +6,9 @@ function App() {
       <header className="App-header">
         <h1 style={{ position: 'absolute', top: '20px', textAlign: 'center', width: '100%' }}>Vectionary</h1>
         {/* <img 
-          src={'vectionary_logo.png'} 
+          src='./vectionary_logo.png'
           alt="Vectionary Logo" 
-          style={{ marginTop: '60px', width: '200px', height: 'auto' }} // Adjust size as needed
+          style={{ marginTop: '20px', marginBottom: '40px', width: '300px', height: 'auto' }} // Adjust size as needed
         />*/ }
         
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
