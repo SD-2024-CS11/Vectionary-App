@@ -21,7 +21,7 @@ function App() {
           flexDirection: 'column', 
           alignItems: 'center', 
           justifyContent: 'center',
-          marginTop: '150px' // Adjusted margin to move the input and button closer to the top
+          marginTop: '-500px' // Adjusted margin to move the input and button closer to the top
         }}>
           <input 
             type="text" 
