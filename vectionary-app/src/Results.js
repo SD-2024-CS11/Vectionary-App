@@ -16,8 +16,12 @@ function Results() {
           marginTop: '150px' 
         }}>
           <h2 style={{ marginBottom: '20px' }}>Results</h2>
-          <p style={{ textAlign: 'center', fontSize: '18px', color: 'black' }}>
-            Here are the results based on your input.
+          <p style={{ textAlign: 'center', fontSize: '24px', color: 'black' }}>
+            {/* Sentence with color-coded nouns */}
+            The golden sunlight 
+            <span style={{ color: 'blue' }}> sunlight </span> 
+            filtered through the 
+            <span style={{ color: 'green' }}> trees </span>.
           </p>
         </div>
 
