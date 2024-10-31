@@ -19,7 +19,7 @@ function App() {
             style={{ padding: '16px', fontSize: '18px', marginBottom: '20px', width: '400px' }} 
           />
           <button 
-            style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', color: 'white', backgroundColor: '#00008b', transition: 'background-color 0.3s'}}
+            style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', color: 'white', backgroundColor: '#00008b', transition: 'background-color 0.1s'}}
             onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#486Cff'}
             onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#00008b'}
           >
