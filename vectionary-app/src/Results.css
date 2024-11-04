@@ -24,5 +24,10 @@
   .tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+    font-weight: normal;
   }
+
+  .tooltip:hover {
+    font-weight: bold; /* Make the hovered text bold */
+}
   
