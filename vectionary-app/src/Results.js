@@ -1,5 +1,6 @@
 // src/Results.js
 import React from 'react';
+import './Results.css'; // Import the CSS file for styling
 
 function Results() {
   return (
@@ -15,13 +16,19 @@ function Results() {
           justifyContent: 'center',
           marginTop: '150px' 
         }}>
-          <h2 style={{ marginBottom: '20px' }}>Results</h2>
+          <h2 style={{ marginBottom: '50px' }}>Results</h2>
           <p style={{ textAlign: 'center', fontSize: '24px', color: 'black' }}>
-            {/* Sentence with color-coded nouns */}
-            The golden sunlight 
-            <span style={{ color: 'blue' }}> sunlight </span> 
-            filtered through the 
-            <span style={{ color: 'green' }}> trees </span>.
+            The golden&nbsp;
+            <span className="tooltip" style={{ color: 'blue' }}>
+              sunlight
+              <span className="tooltip-text">A natural light from the sun</span>
+            </span>
+            &nbsp;filtered through the&nbsp;
+            <span className="tooltip" style={{ color: 'green' }}>
+              trees
+              <span className="tooltip-text">Tall plants with branches and leaves</span>
+            </span>
+            .
           </p>
         </div>
 
