@@ -1,8 +1,24 @@
 // src/Results.js
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Results.css'; // Import the CSS file for styling
 
 function Results() {
+  const location = useLocation();
+  const inputText = location.state?.inputText; // Access the input text from the passed state
+
+  useEffect(() => {
+    if (inputText) {
+      // Example of making a request with the inputText
+      console.log('Making request with:', inputText);
+      // You could make an API request here using fetch or axios, e.g.,
+      // fetch(`/api/your-endpoint?query=${encodeURIComponent(inputText)}`)
+      //   .then(response => response.json())
+      //   .then(data => console.log(data))
+      //   .catch(error => console.error('Error:', error));
+    }
+  }, [inputText]);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +33,11 @@ function Results() {
           marginTop: '150px' 
         }}>
           <h2 style={{ marginBottom: '50px' }}>Results</h2>
+          <p style={{ textAlign: 'center', fontSize: '24px', color: 'black' }}>
+            {/* Display the text submitted */}
+            You submitted: <strong>{inputText}</strong>
+          </p>
+
           <p style={{ textAlign: 'center', fontSize: '24px', color: 'black' }}>
             The golden&nbsp;
             <span className="tooltip" style={{ color: 'blue' }}>

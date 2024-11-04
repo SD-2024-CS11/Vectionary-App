@@ -1,13 +1,16 @@
+// App.js
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Results from './Results';
 
 function App() {
   const navigate = useNavigate();
+  const [inputText, setInputText] = useState(''); // Step 1: State for storing input text
 
   const handleSubmit = () => {
-    navigate('/results');
+    // Step 2: Navigate to /results with the input text as state
+    navigate('/results', { state: { inputText } });
   };
 
   return (
@@ -21,12 +24,14 @@ function App() {
           flexDirection: 'column', 
           alignItems: 'center', 
           justifyContent: 'center',
-          marginTop: '-25%' // Adjusted margin to move the input and button closer to the top
+          marginTop: '-25%' 
         }}>
           <input 
             type="text" 
             placeholder="Enter text" 
-            style={{ padding: '16px', fontSize: '18px', marginBottom: '20px', width: '400px' }} 
+            style={{ padding: '16px', fontSize: '18px', marginBottom: '20px', width: '400px' }}
+            value={inputText} // Step 1: Bind input value to state
+            onChange={(e) => setInputText(e.target.value)} // Step 1: Update state on input change
           />
           <button 
             style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', color: 'white', backgroundColor: '#00008b', transition: 'background-color 0.1s'}}
