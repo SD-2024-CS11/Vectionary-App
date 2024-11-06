@@ -11,7 +11,7 @@ function Results() {
     if (inputText) {
       // Example of making a request with the inputText
       console.log('Making request with:', inputText);
-      // You could make an API request here using fetch or axios, e.g.,
+      // You could make an API request here (this one uses fetch ex)
       // fetch(`/api/your-endpoint?query=${encodeURIComponent(inputText)}`)
       //   .then(response => response.json())
       //   .then(data => console.log(data))
