@@ -16,11 +16,16 @@ function Results() {
     if (inputText) {
       // Making a request with the inputText
       console.log('Making request with:', inputText);
-      // You could make an API request here using fetch or axios, e.g.,
-      // fetch(`/api/your-endpoint?query=${encodeURIComponent(inputText)}`)
-      //   .then(response => response.json())
-      //   .then(data => console.log(data))
-      //   .catch(error => console.error('Error:', error));
+      const url = 'http://127.0.0.1:8000/process_text';
+
+      axios.post(url, { text: inputText })
+        .then(response => {
+          console.log(response.data);
+          setResponseData(response.data);
+        })
+        .catch(error => {
+          console.error('Error:', error)
+        });
     }
   }, [inputText]);
 
@@ -96,4 +101,4 @@ function Results() {
   );
 }
 
-export default Results;
+export default Results; s
