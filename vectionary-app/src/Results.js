@@ -14,7 +14,7 @@ function Results() {
 
   useEffect(() => {
     if (inputText) {
-      // Example of making a request with the inputText
+      // Making a request with the inputText
       console.log('Making request with:', inputText);
       // You could make an API request here using fetch or axios, e.g.,
       // fetch(`/api/your-endpoint?query=${encodeURIComponent(inputText)}`)
@@ -55,6 +55,9 @@ function Results() {
               <span className="tooltip-text">Tall plants with branches and leaves</span>
             </span>
           </p>
+
+
+
           {responseData ? (
             <div>
               {Object.entries(responseData).map(([key, value]) => (
@@ -67,6 +70,9 @@ function Results() {
             <div>No data available</div>
           )}
         </div>
+
+
+
 
         <a
           href="https://i.etsystatic.com/40798348/r/il/235c22/4607038596/il_fullxfull.4607038596_dznd.jpg"
