@@ -13,6 +13,13 @@ function App() {
     navigate('/results', { state: { inputText } });
   };
 
+  // Handle key press in the input field
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') { // Check if the pressed key is Enter
+      handleSubmit(); // Call the submit handler
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -32,9 +39,17 @@ function App() {
             style={{ padding: '16px', fontSize: '18px', marginBottom: '20px', width: '400px' }}
             value={inputText} // Step 1: Bind input value to state
             onChange={(e) => setInputText(e.target.value)} // Step 1: Update state on input change
+            onKeyPress={handleKeyPress}
           />
           <button 
-            style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', color: 'white', backgroundColor: '#00008b', transition: 'background-color 0.1s'}}
+            style={{ 
+              padding: '10px 20px', 
+              fontSize: '16px', 
+              cursor: 'pointer', 
+              color: 'white', 
+              backgroundColor: '#00008b', 
+              transition: 'background-color 0.1s'
+            }}
             onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#486Cff'}
             onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#00008b'}
             onClick={handleSubmit}
