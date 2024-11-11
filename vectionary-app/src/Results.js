@@ -77,8 +77,6 @@ function Results() {
         </div>
 
 
-
-
         <a
           href="https://i.etsystatic.com/40798348/r/il/235c22/4607038596/il_fullxfull.4607038596_dznd.jpg"
           className="api-info"
@@ -101,4 +99,4 @@ function Results() {
   );
 }
 
-export default Results; s
+export default Results;
