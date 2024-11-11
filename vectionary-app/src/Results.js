@@ -16,7 +16,7 @@ function Results() {
     if (inputText) {
       // Making a request with the inputText
       console.log('Making request with:', inputText);
-      const url = 'http://127.0.0.1:8000/process_text';
+      const url = 'http://107.23.181.250:8000/dummy';
 
       axios.post(url, { text: inputText })
         .then(response => {
