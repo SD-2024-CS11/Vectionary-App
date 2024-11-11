@@ -18,7 +18,7 @@ function Results() {
       console.log('Making request with:', inputText);
       const url = 'http://107.23.181.250:8000/dummy';
 
-      axios.post(url, { text: inputText })
+      axios.get(url)
         .then(response => {
           console.log(response.data);
           setResponseData(response.data);
