@@ -5,8 +5,6 @@ import './Results.css'; // Import the CSS file for styling
 import axios from 'axios';
 
 
-
-
 function Results() {
   const location = useLocation();
   const [responseData, setResponseData] = useState(null);
@@ -64,10 +62,11 @@ function Results() {
 
 
           {responseData ? (
-            <div>
-              {Object.entries(responseData).map(([key, value]) => (
-                <p key={key}>
-                  <strong>{key}:</strong> {JSON.stringify(value)}
+            <div style={{ textAlign: 'center', fontSize: '18px', color: 'black', lineHeight: '1.6' }}>
+              {responseData.map((item, index) => (
+                <p key={index}>
+                  The <strong style={{ color: 'blue' }}>{item.text}</strong> was identified as an entity of type {item.type}.
+                  For more details, see <a href={item.definition} target="_blank" rel="noopener noreferrer">this link</a>.
                 </p>
               ))}
             </div>
