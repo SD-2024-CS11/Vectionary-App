@@ -1,33 +1,28 @@
-/* src/Results.css */
 .tooltip {
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .tooltip-text {
-    visibility: hidden;
-    width: 180px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 5px;
-    border-radius: 4px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%; /* Position above the text */
-    left: 50%;
-    margin-left: -90px; /* Center-align the tooltip */
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-    font-weight: normal;
-  }
-
-  .tooltip:hover {
-    font-weight: bold; /* Make the hovered text bold */
+  position: relative;
+  cursor: pointer;
 }
-  
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 300px; /* Increase width for a larger box */
+  height: 30px;
+  background-color: #555;
+  color: #fff;
+  text-align: left; /* Align text to the left for better readability */
+  border-radius: 8px; /* Optional: increase border radius for a smoother look */
+  padding: 10px; /* Add more padding for space around the text */
+  position: absolute;
+  z-index: 1;
+  bottom: 135%; /* Adjust positioning as needed */
+  left: 50%;
+  margin-left: -150px; /* Center the tooltip relative to its width */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+

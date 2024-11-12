@@ -46,33 +46,21 @@ function Results() {
             You submitted: <strong>{inputText}</strong>
           </p>
 
-          <p style={{ textAlign: 'center', fontSize: '24px', color: 'black' }}>
-            The golden&nbsp;
-            <span className="tooltip" style={{ color: 'blue' }}>
-              sunlight
-              <span className="tooltip-text">A natural light from the sun</span>
-            </span>
-            &nbsp;filtered through the&nbsp;
-            <span className="tooltip" style={{ color: 'green' }}>
-              trees
-              <span className="tooltip-text">Tall plants with branches and leaves</span>
-            </span>
-          </p>
-
-
-
           {responseData ? (
-            <div style={{ textAlign: 'center', fontSize: '18px', color: 'black', lineHeight: '1.6' }}>
-              {responseData.map((item, index) => (
-                <p key={index}>
-                  The <strong style={{ color: 'blue' }}>{item.text}</strong> was identified as an entity of type {item.type}.
-                  For more details, see <a href={item.definition} target="_blank" rel="noopener noreferrer">this link</a>.
-                </p>
-              ))}
-            </div>
-          ) : (
-            <div>No data available</div>
-          )}
+          <div style={{ textAlign: 'center', fontSize: '18px', color: 'black', lineHeight: '1.6' }}>
+            {responseData.map((item, index) => (
+              <p key={index}>
+                The <span className="tooltip">
+                  <strong style={{ color: 'blue' }}>{item.text}</strong>
+                  <span className="tooltip-text">{item.definition}</span>
+                </span> was identified as an entity of type {item.type}.
+                For more details, see <a href={item.definition} target="_blank" rel="noopener noreferrer">this link</a>.
+              </p>
+            ))}
+          </div>
+        ) : (
+          <div>No data available</div>
+)}
         </div>
 
 
