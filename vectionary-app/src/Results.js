@@ -51,9 +51,9 @@ function Results() {
             {responseData.map((item, index) => (
               <p key={index}>
                 The <span className="tooltip">
-                  <strong style={{ color: '#486Cff' }}>{item.text}</strong>
-                  <span className="tooltip-text">{item.definition}</span>
-                </span> was identified as an entity of type {item.type}.
+                <strong style={{ color: '#486Cff' }}>{item.text}</strong>
+                <span className="tooltip-text">{item.defintion}</span>
+                </span> was identified as an entity of type <u>{item.type}</u>.
                 For more details, see this{' '}  
                 <a 
                   href={item.defintion} 
