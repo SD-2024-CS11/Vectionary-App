@@ -51,10 +51,18 @@ function Results() {
             {responseData.map((item, index) => (
               <p key={index}>
                 The <span className="tooltip">
-                  <strong style={{ color: 'blue' }}>{item.text}</strong>
+                  <strong style={{ color: '#486Cff' }}>{item.text}</strong>
                   <span className="tooltip-text">{item.definition}</span>
                 </span> was identified as an entity of type {item.type}.
-                For more details, see <a href={item.definition} target="_blank" rel="noopener noreferrer">this link</a>.
+                For more details, see this{' '}  
+                <a 
+                  href={item.defintion} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ fontWeight: 'bold', color: '#486Cff' }}
+                >
+                  link
+                </a>.
               </p>
             ))}
           </div>

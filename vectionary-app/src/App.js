@@ -48,7 +48,8 @@ function App() {
               cursor: 'pointer', 
               color: 'white', 
               backgroundColor: '#00008b', 
-              transition: 'background-color 0.1s'
+              transition: 'background-color 0.1s',
+              fontWeight: 'bold'
             }}
             onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#486Cff'}
             onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#00008b'}
