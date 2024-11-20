@@ -47,32 +47,44 @@ function Results() {
           </p>
 
           {responseData ? (
-          <div style={{ textAlign: 'center', fontSize: '24px', color: 'black', lineHeight: '1.6' }}>
+            <div style={{ textAlign: 'center', fontSize: '24px', color: 'black', lineHeight: '1.6' }}>
               {responseData.map((item, index) => (
                 <span
                   key={index}
-                  className={item.type === "NOUN" ? "tooltip" : ""}
+                  className={`tooltip ${item.type.toLowerCase()}`} // Apply class based on type
                   style={{
                     margin: "0 2px", // Adds spacing between words
                   }}
                 >
                   {item.type === "NOUN" ? (
-                    <a
-                      href={item.definition}  // Link to the noun's definition
-                      target="_blank"          // Open link in a new tab
-                      rel="noopener noreferrer"
-                    >
-                      {item.text}
-                    </a>
+                    <span>
+                      {item.definition === "TBD" ? (
+                        <span>{item.text}</span>  // If definition is "TBD", don't make it a link
+                      ) : (
+                        <a
+                          href={item.definition}  // Link to the definition if it's not "TBD"
+                          target="_blank"          // Open link in a new tab
+                          rel="noopener noreferrer"
+                        >
+                          {item.text}
+                        </a>
+                      )}
+                    </span>
                   ) : (
-                    <span>{item.text}</span>  // Non-noun text remains normal
+                    <span>{item.text}</span>  // For non-NOUN, VERB, ADJ text, display normally
                   )}
 
-                  {item.type === "NOUN" && (
+                  {/* Tooltip for the noun */}
+                  {(item.type === "NOUN") && (
                     <span className="tooltip-text">
-                      <b>Definition Link:</b> <a href={item.definition} target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>
-                        {item.definition}
-                      </a>
+                      <b>Definition Link:</b> 
+                      {item.definition === "TBD" ? (
+                        <span>{item.definition}</span>
+                      ) : (
+                        <a href={item.definition} target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>
+                          {item.definition}
+                        </a>
+                      )}
                       <br />
                       <b>Part of Speech:</b> {item.type}
                       <br />
@@ -81,8 +93,8 @@ function Results() {
                   )}
                 </span>
               ))}
-          </div>
-        ) : (
+            </div>
+          ) : (
           <div>No data available</div>
 )}
         </div>
