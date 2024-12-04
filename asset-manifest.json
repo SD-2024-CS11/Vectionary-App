@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/vectionary-app/static/css/main.0864e995.css",
-    "main.js": "/vectionary-app/static/js/main.aeae3a6e.js",
-    "static/js/453.f26e4bdb.chunk.js": "/vectionary-app/static/js/453.f26e4bdb.chunk.js",
-    "index.html": "/vectionary-app/index.html",
-    "main.0864e995.css.map": "/vectionary-app/static/css/main.0864e995.css.map",
-    "main.aeae3a6e.js.map": "/vectionary-app/static/js/main.aeae3a6e.js.map",
-    "453.f26e4bdb.chunk.js.map": "/vectionary-app/static/js/453.f26e4bdb.chunk.js.map"
+    "main.css": "/Vectionary-App/static/css/main.0864e995.css",
+    "main.js": "/Vectionary-App/static/js/main.24122f56.js",
+    "static/js/453.f26e4bdb.chunk.js": "/Vectionary-App/static/js/453.f26e4bdb.chunk.js",
+    "index.html": "/Vectionary-App/index.html",
+    "main.0864e995.css.map": "/Vectionary-App/static/css/main.0864e995.css.map",
+    "main.24122f56.js.map": "/Vectionary-App/static/js/main.24122f56.js.map",
+    "453.f26e4bdb.chunk.js.map": "/Vectionary-App/static/js/453.f26e4bdb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0864e995.css",
-    "static/js/main.aeae3a6e.js"
+    "static/js/main.24122f56.js"
   ]
 }
