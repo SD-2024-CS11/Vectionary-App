@@ -14,7 +14,7 @@ function Results() {
     if (inputText) {
       // Making a request with the inputText
       console.log('Making request with:', inputText);
-      const url = 'http://107.23.181.250:8000/dummy_text/' + inputText;
+      const url = 'http://107.23.181.250:8000/text/' + inputText;
 
       axios.get(url)
         .then(response => {
