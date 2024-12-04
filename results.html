@@ -89,6 +89,18 @@
             color: black;
             margin-bottom: 50px;
         }
+
+        .loading {
+            color: #486Cff;
+            font-size: 20px;
+        }
+
+        .error {
+            color: red;
+            background-color: #ffeeee;
+            padding: 20px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -132,44 +144,80 @@
             const urlParams = new URLSearchParams(window.location.search);
             const inputText = urlParams.get('input');
 
-            // Display submitted text
+            // Get DOM elements
             const inputDisplay = document.getElementById('input-display');
             const resultsContainer = document.getElementById('results-container');
 
+            // Function to display loading state
+            function showLoading() {
+                resultsContainer.innerHTML = '<div class="loading">Loading results...</div>';
+            }
+
+            // Function to display error
+            function showError(message) {
+                resultsContainer.innerHTML = `
+                    <div class="error">
+                        <h3>Error Retrieving Results</h3>
+                        <p>${message}</p>
+                    </div>
+                `;
+            }
+
+            // Function to display results
+            function displayResults(data) {
+                // Clear previous results
+                resultsContainer.innerHTML = '';
+
+                // Check if data exists and is an array
+                if (!data || !Array.isArray(data) || data.length === 0) {
+                    showError('No results found.');
+                    return;
+                }
+
+                // Create results dynamically
+                data.forEach(item => {
+                    const resultElement = document.createElement('div');
+                    resultElement.innerHTML = `
+                        <div class="tooltip">
+                            <strong style="color: #486Cff;">${item.text || 'Unknown'}</strong>
+                            <span class="tooltip-text">${item.defintion || 'No definition available'}</span>
+                        </div>
+                        <p>
+                            Identified as an entity of type: <u>${item.type || 'Unknown'}</u>
+                            ${item.defintion 
+                                ? `<br><a href="${item.defintion}" target="_blank" style="color: #486Cff;">More Details</a>` 
+                                : ''}
+                        </p>
+                    `;
+                    resultsContainer.appendChild(resultElement);
+                });
+            }
+
+            // Check if input text exists
             if (inputText) {
+                // Display submitted text
                 inputDisplay.textContent = inputText;
 
-                // Make API request
-                const url = 'http://107.23.181.250:8000/text/' + inputText;
+                // Show loading state
+                showLoading();
 
-                fetch(url)
-                    .then(response => response.json())
-                    .then(data => {
-                        // Clear any existing results
-                        resultsContainer.innerHTML = '';
-
-                        // Process and display results
-                        data.forEach(item => {
-                            const resultElement = document.createElement('p');
-                            resultElement.innerHTML = `
-                                The <span class="tooltip">
-                                    <strong style="color: #486Cff;">${item.text}</strong>
-                                    <span class="tooltip-text">${item.defintion}</span>
-                                </span> was identified as an entity of type <u>${item.type}</u>.
-                                For more details, see this 
-                                <a href="${item.defintion}" target="_blank" style="font-weight: bold; color: #486Cff;">
-                                    link
-                                </a>.
-                            `;
-                            resultsContainer.appendChild(resultElement);
-                        });
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        resultsContainer.innerHTML = '<div>No data available</div>';
-                    });
-            } else {
-                resultsContainer.innerHTML = '<div>No input text provided</div>';
+                fetch(`http://107.23.181.250:8000/text/${encodeURIComponent(inputText)}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    displayResults(data);
+                })
+                .catch(error => {
+                    showError(error.message || 'An unexpected error occurred');
+                    console.error('API Request Error:', error);
+                });
+                } else {
+                // No input text provided
+                showError('No input text provided. Please go back and enter some text.');
             }
         });
     </script>
